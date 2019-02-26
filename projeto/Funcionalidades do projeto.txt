@@ -1,0 +1,103 @@
+﻿Crud
+{
+    Usuários
+	{
+    	-Cadastro [1]
+    	-Login [1]
+    	-Editar [1]
+    	-Excluir [1]
+    }
+
+    Jogos
+    {
+    	-Cadastro [1]
+    	-Editar [1]
+    	-Excluir [1]
+    }
+}
+
+Feedback
+{
+	-Avaliação do jogo [1]
+	-Descrição da crítica do jogo [0]
+	-Likes/Dislikes [1]
+	-Comentarios do feedback [3]
+}
+
+Dicas
+{
+	-Título da dica (Diz brevemente sobre o que é a dica) [0]
+	-Descrição da dica sobre o jogo (Fica oculto até o usuário clicar no título) [0]
+	-Likes/Dislikes [1]
+	-Comentários da dica [3]
+}
+
+Posts
+{
+	Descrição [0]
+	-Likes/Dislikes [1]
+	-Comentários do post [3]
+}
+
+Home
+{
+	-Jogos em destaques [1]
+	-Jogos recentes [1]
+	-Sugestões de jogos [2]
+}
+
+Categorias
+{
+	Listagem dos jogos de determinada categoria cadastrados
+	{
+		-Destaques dos conteúdos deste jogo [2]
+		Conteúdo deste jogo
+		{
+			-Listagem de Feedbacks deste jogo [1]
+			-Listagem de Dicas para este jogo [1]
+			-Listagem de Posts sobre este jogo [1]
+		}
+	}
+}
+
+Usuários seguidos
+{
+	-Feedbacks dele [1]
+	-Dicas dele [1]
+	-Posts dele [1]
+}
+
+Perfil
+{
+	-Personalizar [4]
+	-Seguir outros Usuários [1]
+	-Meus Feedbacks [1]
+	-Minhas dicas [1]
+	-Meus posts [1]
+	Repertório
+	{
+		Experiência
+		{
+			-Desejo Jogar
+			-Já Joguei
+			-Nunca joguei(default)
+			-Não quero ver sobre
+		}
+		Nível
+		{
+			-Joguei algumas vezes
+			-Finalizei a campanha
+			-Fiz 100%
+		}
+		Classificação
+		{
+			-Favoritos
+			-Gostei
+			-Não gostei
+			-Horrível
+		}
+	}
+}
+
+
+

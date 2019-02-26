@@ -1,0 +1,24 @@
+body{
+	margin: 0%;
+}
+.navbarra{
+	width: 100%;
+	height: 50px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	vertical-align: center;
+}
+.formulario-centro{
+	height: 900px;
+	background-color: lightgray;
+}
+
+.row{
+	width: 100%;
+}
+
+footer{
+	background-color: black;
+	color: white;
+}

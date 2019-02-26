@@ -1,0 +1,164 @@
+/* banco logico: */
+
+CREATE TABLE Jogo (
+    id_jogo SERIAL PRIMARY KEY,
+    nome_jogo VARCHAR,
+    descricao_jogo VARCHAR,
+    img_capa VARCHAR,
+    img_grande VARCHAR
+);
+
+CREATE TABLE Categoria (
+    id_categoria SERIAL PRIMARY KEY,
+    nome_categoria VARCHAR
+);
+
+CREATE TABLE Usuario (
+    id_user SERIAL PRIMARY KEY,
+    email VARCHAR,
+    nome VARCHAR,
+    senha VARCHAR,
+    img_perfil VARCHAR,
+    img_logo VARCHAR,
+    admin INTEGER
+);
+
+CREATE TABLE Avaliacao (
+    id_avaliacao SERIAL PRIMARY KEY,
+    titulo VARCHAR,
+    descricao_avaliacao VARCHAR,
+    id_jogo SERIAL,
+    id_user SERIAL
+);
+
+CREATE TABLE Dica (
+    id_dica SERIAL PRIMARY KEY,
+    titulo VARCHAR,
+    descricao_dica VARCHAR,
+    id_jogo SERIAL,
+    id_user SERIAL
+);
+
+CREATE TABLE Comentario (
+    id_comentario SERIAL PRIMARY KEY,
+    descricao_comentario VARCHAR,
+    id_user SERIAL,
+    id_dica SERIAL,
+    id_avaliacao SERIAL
+);
+
+CREATE TABLE Curtida (
+    id_curtidas SERIAL PRIMARY KEY,
+    tipo INTEGER,
+    id_user SERIAL,
+    id_avaliacao SERIAL,
+    id_dica SERIAL,
+    id_comentario SERIAL
+);
+
+CREATE TABLE Seguindo (
+    id_seguindo INTEGER PRIMARY KEY,
+    id_user SERIAL,
+    id_user_seguido SERIAL
+);
+
+CREATE TABLE Jogo_Categoria (
+    id_jogo_categoria SERIAL PRIMARY KEY,
+    id_categoria SERIAL,
+    id_jogo SERIAL
+);
+
+CREATE TABLE Usuario_Jogo (
+    id_jogo SERIAL,
+    id_user SERIAL,
+    experiencia INTEGER,
+    nivel INTEGER,
+    classificacao INTEGER
+);
+ 
+ALTER TABLE Avaliacao ADD CONSTRAINT FK_Avaliacao_1
+    FOREIGN KEY (id_jogo)
+    REFERENCES Jogo (id_jogo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Avaliacao ADD CONSTRAINT FK_Avaliacao_2
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Dica ADD CONSTRAINT FK_Dica_1
+    FOREIGN KEY (id_jogo)
+    REFERENCES Jogo (id_jogo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Dica ADD CONSTRAINT FK_Dica_2
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_1
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_2
+    FOREIGN KEY (id_dica)
+    REFERENCES Dica (id_dica)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_3
+    FOREIGN KEY (id_avaliacao)
+    REFERENCES Avaliacao (id_avaliacao)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Curtida ADD CONSTRAINT FK_Curtida_1
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Curtida ADD CONSTRAINT FK_Curtida_2
+    FOREIGN KEY (id_avaliacao)
+    REFERENCES Avaliacao (id_avaliacao)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Curtida ADD CONSTRAINT FK_Curtida_4
+    FOREIGN KEY (id_dica)
+    REFERENCES Dica (id_dica)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Curtida ADD CONSTRAINT FK_Curtida_5
+    FOREIGN KEY (id_comentario)
+    REFERENCES Comentario (id_comentario)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Seguindo ADD CONSTRAINT FK_Seguindo_1
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Seguindo ADD CONSTRAINT FK_Seguindo_2
+    FOREIGN KEY (id_user_seguido)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Jogo_Categoria ADD CONSTRAINT FK_Jogo_Categoria_1
+    FOREIGN KEY (id_categoria)
+    REFERENCES Categoria (id_categoria)
+    ON DELETE CASCADE ON UPDATE RESTRICT;
+ 
+ALTER TABLE Jogo_Categoria ADD CONSTRAINT FK_Jogo_Categoria_2
+    FOREIGN KEY (id_jogo)
+    REFERENCES Jogo (id_jogo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Usuario_Jogo ADD CONSTRAINT FK_Usuario_Jogo_0
+    FOREIGN KEY (id_jogo)
+    REFERENCES Jogo (id_jogo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Usuario_Jogo ADD CONSTRAINT FK_Usuario_Jogo_1
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+
+INSERT INTO usuario(email,nome,senha,img_logo,img_perfil,admin) VALUES ('admin@admin','Administrador','123','logo_admin.png','perfil_admin.png','1');
