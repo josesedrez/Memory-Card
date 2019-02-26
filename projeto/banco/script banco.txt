@@ -1,0 +1,174 @@
+/* banco logico: */
+
+CREATE TABLE Jogo (
+    id_jogo SERIAL PRIMARY KEY,
+    nome_jogo VARCHAR,
+    descricao_jogo VARCHAR,
+    img_capa VARCHAR,
+    img_grande VARCHAR
+);
+
+CREATE TABLE Categoria (
+    id_categoria SERIAL PRIMARY KEY,
+    nome_categoria VARCHAR
+);
+
+CREATE TABLE Usuario (
+    id_user SERIAL PRIMARY KEY,
+    email VARCHAR,
+    nome VARCHAR,
+    senha VARCHAR,
+    img_perfil VARCHAR,
+    img_logo VARCHAR,
+    admin INTEGER
+);
+
+CREATE TABLE Avaliacao (
+    id_avaliacao SERIAL PRIMARY KEY,
+    titulo VARCHAR,
+    descricao_avaliacao VARCHAR,
+    id_jogo SERIAL,
+    id_user SERIAL
+);
+
+CREATE TABLE Comentario (
+    id_comentario SERIAL PRIMARY KEY,
+    descricao_comentario VARCHAR,
+    id_user SERIAL,
+    id_avaliacao SERIAL
+);
+
+CREATE TABLE Curtida (
+    id_curtidas SERIAL PRIMARY KEY,
+    tipo INTEGER,
+    id_user SERIAL,
+    id_avaliacao SERIAL,
+    id_comentario SERIAL
+);
+
+CREATE TABLE Seguindo (
+    id_seguindo INTEGER PRIMARY KEY,
+    id_user SERIAL,
+    id_user_seguido SERIAL
+);
+
+CREATE TABLE Jogo_Categoria (
+    id_jogo_categoria SERIAL PRIMARY KEY,
+    id_categoria SERIAL,
+    id_jogo SERIAL
+);
+
+CREATE TABLE Usuario_Jogo (
+    id_jogo SERIAL,
+    id_user SERIAL,
+    experiencia INTEGER,
+    nivel INTEGER,
+    classificacao INTEGER
+);
+ 
+ALTER TABLE Avaliacao ADD CONSTRAINT FK_Avaliacao_1
+    FOREIGN KEY (id_jogo)
+    REFERENCES Jogo (id_jogo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Avaliacao ADD CONSTRAINT FK_Avaliacao_2
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_1
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Comentario ADD CONSTRAINT FK_Comentario_3
+    FOREIGN KEY (id_avaliacao)
+    REFERENCES Avaliacao (id_avaliacao)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Curtida ADD CONSTRAINT FK_Curtida_1
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Curtida ADD CONSTRAINT FK_Curtida_2
+    FOREIGN KEY (id_avaliacao)
+    REFERENCES Avaliacao (id_avaliacao)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Curtida ADD CONSTRAINT FK_Curtida_5
+    FOREIGN KEY (id_comentario)
+    REFERENCES Comentario (id_comentario)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Seguindo ADD CONSTRAINT FK_Seguindo_1
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Seguindo ADD CONSTRAINT FK_Seguindo_2
+    FOREIGN KEY (id_user_seguido)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Jogo_Categoria ADD CONSTRAINT FK_Jogo_Categoria_1
+    FOREIGN KEY (id_categoria)
+    REFERENCES Categoria (id_categoria)
+    ON DELETE CASCADE ON UPDATE RESTRICT;
+ 
+ALTER TABLE Jogo_Categoria ADD CONSTRAINT FK_Jogo_Categoria_2
+    FOREIGN KEY (id_jogo)
+    REFERENCES Jogo (id_jogo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Usuario_Jogo ADD CONSTRAINT FK_Usuario_Jogo_0
+    FOREIGN KEY (id_jogo)
+    REFERENCES Jogo (id_jogo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Usuario_Jogo ADD CONSTRAINT FK_Usuario_Jogo_1
+    FOREIGN KEY (id_user)
+    REFERENCES Usuario (id_user)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+
+INSERT INTO usuario(email,nome,senha,img_logo,img_perfil,admin) VALUES ('admin@admin','Administrador','123','logo_admin.png','perfil_admin.png','1');
+
+INSERT INTO usuario(email,nome,senha,img_logo,img_perfil,admin) VALUES ('a@a','Usuário 1','123','logo_default.png','perfil_default.png','0');
+
+INSERT INTO usuario(email,nome,senha,img_logo,img_perfil,admin) VALUES ('b@b','Usuário 2','123','logo_default.png','perfil_default.png','0');
+
+INSERT INTO usuario(email,nome,senha,img_logo,img_perfil,admin) VALUES ('c@c','Usuário 3','123','logo_default.png','perfil_default.png','0');
+
+INSERT INTO jogo(nome_jogo,descricao_jogo,img_capa,img_grande) VALUES ('Mineirinho Simulator','O melhor jogo do mundo, com direito a ação, comédia, drama e muito mais.','capa_default.png','capa_default.png');
+
+INSERT INTO jogo(nome_jogo,descricao_jogo,img_capa,img_grande) VALUES ('Zelda: Ocarina of Time','Jogo sobre um elfo que tenta impedir que a lua caia em uma cidade.','capa_default.png','capa_default.png');
+
+INSERT INTO jogo(nome_jogo,descricao_jogo,img_capa,img_grande) VALUES ('Super Mario Brothers','Uma dupla de irmãos da pesada que montam em dinossauros e saem em altas trapalhadas e confusões para derrotar uma tartaruga dragão.','capa_default.png','capa_default.png');
+
+INSERT INTO jogo(nome_jogo,descricao_jogo,img_capa,img_grande) VALUES ('Mortal Kombat 3','O jogo no qual clube da luta se inspirou, sangue e muitos, muitos, ossos voando na tela.','capa_default.png','capa_default.png');
+
+INSERT INTO categoria(nome_categoria) VALUES ('Ação');
+
+INSERT INTO categoria(nome_categoria) VALUES ('Puzzle');
+
+INSERT INTO categoria(nome_categoria) VALUES ('Estratégia');
+
+INSERT INTO categoria(nome_categoria) VALUES ('RPG');
+
+INSERT INTO categoria(nome_categoria) VALUES ('RTS');
+
+INSERT INTO categoria(nome_categoria) VALUES ('Terror');
+
+INSERT INTO categoria(nome_categoria) VALUES ('Construção');
+
+INSERT INTO categoria(nome_categoria) VALUES ('SandBox');
+
+INSERT INTO categoria(nome_categoria) VALUES ('2D');
+
+INSERT INTO categoria(nome_categoria) VALUES ('3D');
+
+INSERT INTO categoria(nome_categoria) VALUES ('Plataforma');
+
+INSERT INTO categoria(nome_categoria) VALUES ('Indie');
+
+INSERT INTO categoria(nome_categoria) VALUES ('Pixelado');

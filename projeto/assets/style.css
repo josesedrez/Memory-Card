@@ -1,0 +1,469 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Concert One', cursive;;
+}
+
+body
+{
+	min-width: 350px;
+	background-color: #00425C !important;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+#inicio
+{
+	
+}
+
+.inicio_div
+{
+	width: 60%;
+}
+
+h1
+{
+
+	color: white !important;
+}
+
+h4
+{
+
+	color: white !important;
+}
+
+.conteudo
+{
+	width: 1500px;
+	margin: hidden;
+}
+
+.centro
+{
+	width: 100%;
+	min-height: 600px;
+	background-color: #00425C;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	float: left;
+}
+
+.formulario
+{
+	display: block;
+	position: absolute;
+	z-index: 9000;
+	background-color: lightgray;
+	width: 600px;
+	height: 600px;
+	float: right;
+}
+
+#b_cancela_form
+{
+	color: white;
+}
+
+.lista
+{
+	background-color: white;
+	width: 100%;
+	min-height: 600px;
+	float: left;
+}
+
+.lista_home
+{
+	width: 100%;
+	min-height: 600px;
+	color: white;
+	float: left;
+}
+
+td img
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.logo_lista
+{
+	width: 100%;
+	height: 150px;
+	border-radius:100%;
+	border: 1px black solid;
+	float: left;
+}
+
+.row
+{
+	margin: 0px !important;
+}
+
+.texto_lista
+{
+	margin-left: 40px;
+	margin-top: 40px;
+	float: left;
+}
+
+.botao_lista
+{
+	margin-top: 50px;
+}
+
+#corpo_perfil
+{
+	background-color: lightgray;
+	width: 100%;
+	float: left;
+}
+
+.logo
+{
+	width: 15%;
+	height: 150px;
+
+	border: 1px black solid;
+	margin-top: 15px;
+	margin-left: 15px;
+	float: left;
+}
+
+.nome_perfil
+{
+	height: 50px;
+	font-size: 50px;
+	font-family: Arial;
+	color: #000;
+	-webkit-text-stroke-width: 1px; /* largura da borda */
+    -webkit-text-stroke-color: #FFF; /* cor da borda */
+	margin-top: 80px;
+	margin-left: 15px;
+	float: left;
+}
+
+#jogo_categoria
+{
+	display: block;
+	position: absolute;
+	z-index: 9000;
+	width: 1000px;
+}
+
+#cadastro_jogo
+{
+	display: block;
+	position: absolute;
+	z-index: 9000;
+	width: 1000px;
+}
+
+#cadastro_categoria
+{
+	display: block;
+	position: absolute;
+	z-index: 9000;
+	width: 1000px;
+}
+
+.azul_escuro
+{
+	background-color: #00425C;
+	color: white !important;
+}
+
+.azul_claro
+{
+	background-color: #117EA8;
+	color: white !important;
+}
+
+.vermelho
+{
+	background-color: #690A1D;
+	color: white !important;
+}
+
+.branco
+{
+	background-color: white;
+	color: black !important;
+}
+
+.centralizar
+{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.imagem_capa
+{
+	border-radius: 0;
+	width: 125px;
+	height: 200px;
+}
+
+.imagem_logo
+{
+	width: 125px;
+	height: 125px;
+}
+
+button
+{
+	min-width: 120px;
+}
+
+.lista_drop
+{
+	background-color: whitesmoke;
+	width: 160px;
+	position: absolute;
+	margin-top: 210px;
+	z-index: 1000;
+}
+
+.lista_drop button
+{
+	margin: 3px;
+	width: 140px;
+}
+
+/*INICIO - MENU*/
+
+.menu
+{
+	height: 200px;
+	float: left;
+}
+
+.menu_esquerda
+{
+
+	height: 200px;
+	float: left;
+}
+
+	.div_logo
+	{
+		height: 150px;
+		padding: 20px;
+		float: left;
+	}
+
+	.div_logo img
+	{
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+	}
+
+	.div_nome
+	{
+
+		height: 50px;
+		overflow: hidden;
+		float: left;
+	}
+
+.menu_centro
+{
+
+	height: 200px;
+	float: left;
+}
+.menu_direita
+{
+
+	height: 200px;
+	float: left;
+}
+
+.menu_direita button
+{
+	margin: 3px;
+}
+
+/*FIM - MENU*/
+
+/*INICIO - MENU PARA CELULAR*/
+
+.menu_celular
+{
+	height: 150px;
+	display: none;
+	float: left;
+}
+
+.menu_cima
+{
+	height: 50px;
+	float: left;
+}
+
+.menu_meio
+{
+	height: 50px;
+	float: left;
+}
+
+.menu_baixo
+{
+	height: 50px;
+	float: left;
+}
+
+.menu_drop
+{
+	background-color: white;
+	width: 160px;
+	position: absolute;
+	margin-top: 15%;
+	display: none;
+	z-index: 1000;
+}
+
+.menu_drop a
+{
+	width: 150px;
+	margin: 1px;
+}
+
+.menu_gatilho
+{
+	display: none !important;
+}
+
+/*FIM - MENU PARA CELULAR*/
+
+
+/*INICIO - NAVBAR PERFIL*/
+
+.navbar_perfil
+{
+	background-color: darkgray;
+	float: left;
+}
+
+/*FIM - NAVBAR PERFIL*/
+
+/*INICIO - NAVBAR PERFIL CELULAR*/
+
+.navbar_perfil_celular
+{
+	width: 100%;
+	background-color: darkgray;
+	color: white;
+	display: none;
+	float: left;
+}
+
+.navbar_perfil_drop
+{
+	background-color: black;
+	width: 100%;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+}
+
+.navbar_perfil_drop a
+{
+	width: 100%;
+	margin: 1px;
+}
+
+.navbar_perfil_gatilho
+{
+	display: none !important;
+}
+
+/*FIM - NAVBAR PERFIL CELULAR*/
+
+
+
+.ordem
+{
+	width: 10px;
+}
+
+#input_busca
+{
+	height: 38px;
+	width: 250px;
+}
+
+
+/* TELA PEQUENA */
+@media only screen and (max-width: 1140px)
+{
+
+	.menu_gatilho
+	{
+		display: block !important;
+	}
+
+	.menu_direita button
+	{
+		display: none;
+	}
+}
+
+
+/* TELA DE CELULAR */
+@media only screen and (max-width: 700px)
+{
+	.menu_celular
+	{
+		display: block;
+	}
+
+	.menu
+	{
+		display: none;
+	}
+
+	.menu_gatilho
+	{
+		display: block !important;
+	}
+
+	.menu_baixo button
+	{
+		display: none;
+	}
+
+	.navbar_perfil_celular
+	{
+		display: block;
+	}
+
+	.navbar_perfil
+	{
+		display: none;
+	}
+
+	.navbar_perfil_gatilho
+	{
+		display: block !important;
+	}
+
+	.capa_lista_jogo
+	{
+		display: none;
+	}
+}

@@ -1,0 +1,10 @@
+﻿1ª Semana 01/10 - 07/10: Crud [7]
+2ª Semana 08/10 - 14/10: Feedbacks [5]
+3ª Semana 15/10 - 21/10: Dicas [4]
+4ª Semana 22/10 - 28/10: Perfil.Personalizar [4] V
+5ª Semana 29/10 - 04/11: Perfil.Repertório [5]
+6ª Semana 05/11 - 11/11: Perfil.resto[4]
+7ª Semana 12/11 - 18/11: Home [4]
+8ª Semana 19/11 - 25/11: Categorias [5] V
+9ª Semana 26/11 - 02/12: Usuários Seguidos [3]
+10ª Semana 03/12 - 09/12: Tempo para ver se há algum problema e finalizações
